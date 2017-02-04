@@ -1,7 +1,5 @@
-// problem 1
-
+// Problem 1
 sumMultiplesOf3And5 = function() {
-
 	var result = 0
 	var max = 1000
 
@@ -10,20 +8,17 @@ sumMultiplesOf3And5 = function() {
 			result += i
 		}
 	}
-	
 
 	return result
 }
 
-// problem 2
-
+// Problem 2
 var sumEvenFibonacci = function() {
-
 	var result = 0
 	var max = 4000000
 
 	for (var i = 1, j = 2, t = 0; i <= max ; t=i, i=j, j+=t) {
-		
+
 		if (i%2 == 0) {
 			result += i
 		}
@@ -32,10 +27,8 @@ var sumEvenFibonacci = function() {
 	return result
 }
 
-// problem 3
-
+// Problem 3
 var largestPrimeFactor = function() {
-
 	var number = 600851475143
 	var max = 0
 
@@ -49,14 +42,12 @@ var largestPrimeFactor = function() {
 	return max
 }
 
-// problem 4
-
+// Problem 4
 var largest3DigitPallindromeProject = function() {
-
 	var min = 100
 	var max = 999
 	var result = 0
-	
+
 	for (var x = min; x <= max; x++) {
 		for (var y = min; y <= max; y++) {
 			if (isPallindrome(x*y) && result < (x*y)) {
@@ -70,7 +61,7 @@ var largest3DigitPallindromeProject = function() {
 
 var isPallindrome = function(n) {
 	var numberString = ''+n
-	
+
 	for (var x=0,y=numberString.length - 1;x<y;x++,y--) {
 		if (numberString[x] !== numberString[y]) {
 			return false
@@ -79,4 +70,3 @@ var isPallindrome = function(n) {
 
 	return true
 }
-
