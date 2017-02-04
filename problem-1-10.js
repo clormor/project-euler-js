@@ -70,3 +70,40 @@ var isPallindrome = function(n) {
 
 	return true
 }
+
+// Problem 5
+var divisibleByAll = function() {
+	var dividors = 20
+
+	for (var i = dividors; i < Number.MAX_VALUE; i++) {
+		var dividesByAll = true
+		for (var n = 1; n <= dividors; n++) {
+			if (i%n != 0) {
+				dividesByAll = false
+			}
+		}
+
+		if (dividesByAll) {
+			return i
+		}
+	}
+
+	return "No such number exists"
+}
+
+// Problem 6
+var problem6 = function() {
+	var max = 100
+	var sumOfSquares = 0
+	var squareOfSums = 0
+
+	for(var i = 1; i <= max; i++) {
+		sumOfSquares += (i*i)	
+	}
+
+	for (var i = 1; i <= max; i++) {
+		squareOfSums += (i)
+	}
+
+	return (squareOfSums * squareOfSums) - sumOfSquares
+}
