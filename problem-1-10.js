@@ -107,3 +107,36 @@ var problem6 = function() {
 
 	return (squareOfSums * squareOfSums) - sumOfSquares
 }
+
+// Problem 7 - Find the 10,001st prime number
+var buildPrimes = function() {
+	var numPrimes = 10001
+	// Initialise an array containing only prime numbers
+	var primes = [2]
+
+    // For every odd integer, add it to the array if it is prime (stop when we have enough)
+    for (var x = 3; x < Number.MAX_SAFE_INTEGER && primes.length <= numPrimes; x += 2) {
+    	if(isPrime(x,primes)) {
+    		primes.push(x)
+    	}
+    }
+    
+    // Once we have enough primes, return the last one
+    return primes[numPrimes - 1]
+}
+
+// x is prime if all the prime numbers <= sqrt(x) do not divide x
+var isPrime = function(x, primes) {
+	// Find sqrt(x)
+	var sqrt = Math.floor(Math.sqrt(x))
+
+    // Divide x by each applicable prime, return false if any of them divide x
+    for(var n = 0; n < primes.length && primes[n] <= sqrt; n++) {
+    	if (x % primes[n] == 0) {
+    		return false
+    	}
+    }
+    
+    // At this point x must be prime
+    return true
+}
